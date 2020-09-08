@@ -89,7 +89,7 @@ EXPOSE  19132/tcp \
         57863/udp 
 
 #ENTRYPOINT ["/bdsx/script/docker-entrypoint.sh"]
-ENTRYPOINT ["/usr/local/bin/entrypoint-demoter", "--match", "/data", "--debug", "--stdin-on-term", "stop", "$SCRIPT_PATH/docker-entrypoint.sh"]
+ENTRYPOINT ["$SCRIPT_PATH/docker-entrypoint.sh"]
 
 ENV VERSION=LATEST \
     SERVER_PORT=19132
