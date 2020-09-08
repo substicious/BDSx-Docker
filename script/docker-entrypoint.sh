@@ -1,5 +1,7 @@
 #!/bin/sh
 
+mkdir -p $DATA_PATH/configs
+
 # create file if not exist
 if [ ! -f "$DATA_PATH/configs/permissions.json" ]; then
   cp $DEFAULT_CONFIG_PATH/permissions.json $DATA_PATH/configs/permissions.json
