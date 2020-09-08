@@ -1,7 +1,8 @@
 #!/bin/sh
 
 if [ ! -f "$DATA_PATH/configs/server.properties" ]; then
-  cp -R $DEFAULT_CONFIG_PATH/* $DATA_PATH/configs/
+  mkdir -p $DATA_PATH/configs
+  cp -R $DEFAULT_CONFIG_PATH/* $DATA_PATH/configs
 
   if [ ! -d "$DATA_PATH/worlds" ]; then
     mkdir -p $DATA_PATH/worlds
