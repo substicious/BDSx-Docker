@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ ! -f "$BDS/server.properties" ]; then
+if [ ! -f "$DATA_PATH/configs/server.properties" ]; then
   cp $DEFAULT_CONFIG_PATH/permissions.json $DATA_PATH/configs/permissions.json
   cp $DEFAULT_CONFIG_PATH/whitelist.json $DATA_PATH/configs/whitelist.json
   cp $DEFAULT_CONFIG_PATH/server.properties $DATA_PATH/configs/server.properties
