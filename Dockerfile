@@ -68,6 +68,8 @@ RUN chmod +x /usr/local/bin/easy-add
 
 RUN chmod +x $SCRIPT_PATH/docker-entrypoint.sh
 
+RUN mkdir -p $BDS 
+
 RUN easy-add --var version=0.2.1 --var app=entrypoint-demoter --file {{.app}} --from https://github.com/itzg/{{.app}}/releases/download/{{.version}}/{{.app}}_{{.version}}_linux_${ARCH}.tar.gz
 
 RUN easy-add --var version=0.1.1 --var app=set-property --file {{.app}} --from https://github.com/itzg/{{.app}}/releases/download/{{.version}}/{{.app}}_{{.version}}_linux_${ARCH}.tar.gz
