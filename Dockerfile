@@ -89,7 +89,7 @@ EXPOSE  19132/tcp \
         57863/udp 
 
 #ENTRYPOINT ["/bdsx/script/docker-entrypoint.sh"]
-ENTRYPOINT ["$SCRIPT_PATH/docker-entrypoint.sh"]
+ENTRYPOINT $SCRIPT_PATH/docker-entrypoint.sh
 
 ENV VERSION=LATEST \
     SERVER_PORT=19132
