@@ -17,5 +17,6 @@
         * **You do not need to name the container bdsx. You can choose your own name!**
     4. You will then need to attach the docker:
         > docker attach **[YOUR CHOSEN NAME]**
+    
     5. Follow the prompt, until the server starts.
   
