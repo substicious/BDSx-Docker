@@ -54,9 +54,7 @@ ENV SERVER_HOME="/mcpe" \
     DATA_PATH="/data" \
     BDS="/root/.bds"
 
-VOLUME [$DATA_PATH]
-
-WORKDIR $SERVER_PATH
+VOLUME $DATA_PATH
 
 COPY --from=builder $SERVER_HOME $SERVER_HOME
 
@@ -88,14 +86,11 @@ EXPOSE  19132/udp \
 EXPOSE  19132/tcp \
         19133/tcp \
         56772/tcp \
-        57863/udp 
-
-#ENTRYPOINT ["/bdsx/script/docker-entrypoint.sh"]
-ENTRYPOINT $SCRIPT_PATH/docker-entrypoint.sh
+        57863/tcp 
 
 ENV VERSION=LATEST \
     SERVER_PORT=19132
 
-HEALTHCHECK --start-period=1m CMD /usr/local/bin/mc-monitor status-bedrock --host 0.0.0.0 --port $SERVER_PORT
-
+HEALTHCHECK --start-period=1m CMD /usr/local/bin/mc-monitor status-bedrock --host 127.0.0.1 --port $SERVER_PORT
+ENTRYPOINT $SCRIPT_PATH/docker-entrypoint.sh
 CMD ["./bdsx.sh"]
