@@ -10,5 +10,7 @@
 ### INSTALLATION
 
     1. Be sure you have Docker installed.
-    2. Create a folder named > bdsx in > /opt/
+    2. Create a folder named 
+        > bdsx in 
+        > /opt/
     3. 
