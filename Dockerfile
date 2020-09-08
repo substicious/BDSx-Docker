@@ -15,7 +15,7 @@ RUN mkdir -p $SERVER_PATH && \
 
 COPY ./configs $DEFAULT_CONFIG_PATH
 
-RUN cp -R $DEFAULT_CONFIG_PATH $DATA_PATH/configs
+RUN cp -r $DEFAULT_CONFIG_PATH/* $DATA_PATH/configs
 
 COPY ./script $SCRIPT_PATH
 
