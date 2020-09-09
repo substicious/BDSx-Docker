@@ -2,6 +2,8 @@
 
 if [ ! -f "$BDS/server.properties" ]; then
 
+  mkdir -p $DATA_PATH/configs
+
   cp -R $DEFAULT_CONFIG_PATH/* $DATA_PATH/configs
 
   ln -sb $DATA_PATH/configs/permissions.json $BDS/permissions.json
