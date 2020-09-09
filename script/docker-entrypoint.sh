@@ -43,6 +43,5 @@ fi
 #ln -sb $DATA_PATH/configs/whitelist.json $BDS/whitelist.json
 #ln -sb $DATA_PATH/configs/server.properties $BDS/server.properties
 #ln -sb $DATA_PATH/worlds $BDS/worlds
-ln -sb $BDS $DATA_PATH/.bds
 
 exec "./bdsx.sh"

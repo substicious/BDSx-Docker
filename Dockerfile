@@ -56,9 +56,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # INSTALL NPM PACKAGES
-RUN npm install -g \
-    dateformat \
-    fs    
+RUN npm install dateformat fs -g   
 
 # CONFIGURE SERVER
 ENV SERVER_HOME="/mcpe" \
@@ -108,4 +106,3 @@ HEALTHCHECK --start-period=1m CMD /usr/local/bin/mc-monitor status-bedrock --hos
 RUN chmod +X bdsx.sh
 
 ENTRYPOINT $SCRIPT_PATH/docker-entrypoint.sh
-CMD ["./bdsx.sh"]
