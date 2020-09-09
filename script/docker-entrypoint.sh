@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -f "$BDS/server.properties" ]; then
+if [ ! -f "$BDS/installed.txt" ]; then
 
   mkdir -p $DATA_PATH/configs
 
@@ -36,7 +36,9 @@ if [ ! -f "$BDS/server.properties" ]; then
   if [ ! -d "$DATA_PATH/.bds" ]; then
     mkdir -p $DATA_PATH/.bds
   fi
-  
+
+  touch $BDS/installed.txt
+
 fi
 
 #ln -sb $DATA_PATH/configs/permissions.json $BDS/permissions.json
