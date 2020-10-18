@@ -47,8 +47,10 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     curl \
     libcurl4 \
+    nano \
     nodejs \
     npm \
+    screen \
     tar \
     unzip \
     wine && \
@@ -89,14 +91,11 @@ RUN easy-add --var version=0.5.0 --var app=mc-monitor --file {{.app}} --from htt
 WORKDIR $SERVER_PATH
 
 EXPOSE  19132/udp \
-        19133/udp \
-        56772/udp \
-        57863/udp 
+        19133/udp 
 
 EXPOSE  19132/tcp \
         19133/tcp \
-        56772/tcp \
-        57863/tcp 
+        80/tcp
 
 ENV VERSION=LATEST \
     SERVER_PORT=19132
