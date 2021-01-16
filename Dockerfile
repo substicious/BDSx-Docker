@@ -12,6 +12,6 @@ RUN mkdir -p /opt/BDSx-2/ && \
 RUN apk add tar unzip wget
 
 RUN wget https://codeload.github.com/karikera/bdsx/zip/master && \
-    unzip bdsx-master.zip && \
+    unzip master.zip && \
     ls && \
     sleep 10
