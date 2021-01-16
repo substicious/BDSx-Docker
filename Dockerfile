@@ -6,4 +6,12 @@ ENV BASE='/opt/BDSx-2/' \
     EXAMPLE='/opt/BDSx-2/example_and_test/' \
     DATA='/data/'
 
-    
+RUN mkdir -p /opt/BDSx-2/ && \
+    mkdir -p /data/
+
+RUN apk add tar unzip wget
+
+RUN wget https://codeload.github.com/karikera/bdsx/zip/master && \
+    unzip bdsx-master.zip && \
+    ls && \
+    sleep 10
