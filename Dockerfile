@@ -41,4 +41,4 @@ WORKDIR $BASE
 
 VOLUME $DATA
 
-CMD [ "/opt/BDSx-2/bdsx.sh", "Y" ]
+CMD /opt/BDSx-2/bdsx.sh
