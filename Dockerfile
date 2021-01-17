@@ -17,12 +17,27 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositori
 
 RUN apk update
 
-RUN apk add git mono nodejs npm tar wget wine wine-mono
+RUN apk add freetype git mono nodejs npm wine wine-mono
 
 RUN git clone https://github.com/karikera/bdsx.git /opt/BDSx-2/
 
 RUN cd $BASE && ls && sleep 15
 
-#RUN rm -rf /bdsx-2.0/* 2.0.tar.gz
+RUN rm /opt/BDSx-2/bdsx.bat /opt/BDSx-2/bdsx(pause at end).bat /opt/BDSx-2/docker
 
-#RUN rm /opt/BDSx-2/bdsx.bat /opt/BDSx-2/bdsx(pause at end).bat
+RUN cd $BDSX && \
+    npm install if-tsb && \
+    npm run build
+
+RUN chmod +X $BASE/bdsx.sh
+
+EXPOSE  19132/UDP \
+        19133/UDP
+
+COPY ./scripts/ /opt/
+
+WORKDIR $BASE
+
+RUN chmod +X /opt/dockerEntry.sh
+
+ENTRYPOINT /opt/dockerEntry.sh
