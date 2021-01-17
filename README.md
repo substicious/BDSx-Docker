@@ -1,5 +1,5 @@
 
-![logo](BDSX-Linux.png)
+![logo](https://github.com/substicious/bdsx-linux-docker/blob/BDSx-1.3.35/BDSX-Linux.png)
 
 # BDSX For Linux Docker
 ### BDSX: Minecraft Bedrock Dedicated Server + node.js!
