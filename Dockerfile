@@ -11,10 +11,7 @@ RUN mkdir -p /opt/BDSx-2/ && \
 
 RUN apk add tar unzip wget
 
-RUN wget https://github.com/karikera/bdsx/archive/2.0.tar.gz -P /root/ && \
-    tar -xzf /root/2.0.tar.gz && \
-    cp /root/2.0/bdsx-2.0/* /opt/BDSx-2/
-
-RUN rm -rf /root/*
-
-RUN cd /opt/BDSx-2/ && ls -a && sleep 10
+RUN wget https://github.com/karikera/bdsx/archive/2.0.tar.gz && \
+    tar -xzf 2.0.tar.gz && \
+    ls && \
+    sleep 15
