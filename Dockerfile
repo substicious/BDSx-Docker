@@ -23,7 +23,7 @@ RUN git clone https://github.com/karikera/bdsx.git /opt/BDSx-2/
 
 RUN cd $BASE && ls && sleep 15
 
-RUN rm /opt/BDSx-2/bdsx.bat /opt/BDSx-2/bdsx(pause at end).bat /opt/BDSx-2/docker
+RUN rm /opt/BDSx-2/*.bat /opt/BDSx-2/docker
 
 RUN cd $BDSX && \
     npm install if-tsb && \
