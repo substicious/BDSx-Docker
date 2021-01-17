@@ -39,6 +39,8 @@ COPY ./scripts/ /opt/
 
 WORKDIR $BASE
 
+VOLUME $DATA
+
 RUN chmod +X /opt/dockerEntry.sh
 
 ENTRYPOINT /opt/dockerEntry.sh
