@@ -35,12 +35,8 @@ RUN chmod +X $BASE/bdsx.sh
 EXPOSE  19132/UDP \
         19133/UDP
 
-COPY ./scripts/ /opt/
-
 WORKDIR $BASE
 
 VOLUME $DATA
 
-RUN chmod +X /opt/dockerEntry.sh
-
-ENTRYPOINT /opt/dockerEntry.sh
+CMD /opt/BDSx-2/bdsx.sh
