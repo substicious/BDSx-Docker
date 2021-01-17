@@ -35,7 +35,7 @@ RUN chmod +X $BASE/bdsx.sh
 EXPOSE  19132/UDP \
         19133/UDP
 
-RUN ln -sb $BASE/* $DATA/
+RUN ln -sb /opt/BDSx-2/ /data/
 
 WORKDIR $BASE
 
