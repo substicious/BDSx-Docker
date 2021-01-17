@@ -13,5 +13,5 @@ RUN apk add tar unzip wget
 
 RUN wget https://github.com/karikera/bdsx/archive/2.0.tar.gz && \
     tar -xzf 2.0.tar.gz && \
-    ls && \
+    cd bdsx-2.0 && ls && \
     sleep 15
