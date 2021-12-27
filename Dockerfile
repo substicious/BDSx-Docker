@@ -4,11 +4,11 @@ ENV BASE='/opt/BDSx-2/' \
     BDS='/opt/BDSx-2/bedrock_server/' \
     BDSX='/opt/BDSx-2/bdsx/' \
     EXAMPLE='/opt/BDSx-2/example_and_test/' \
-    DATA='/data/' \
+    DATA=$BASE \
     REPO='/opt/gitRepo/'
 
 RUN mkdir -p /opt/BDSx-2/ && \
-    mkdir -p /data/ \
+    mkdir -p /data/ && \
     mkdir -p /opt/gitRepo/
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
