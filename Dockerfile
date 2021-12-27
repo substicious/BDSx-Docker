@@ -26,10 +26,6 @@ RUN cd $BASE && ls && sleep 15
 RUN rm /opt/BDSx-2/*.bat && \
     rm -rf /opt/BDSx-2/docker
 
-RUN cd $BDSX && \
-    npm install if-tsb && \
-    npm run build
-
 RUN chmod +X $BASE/bdsx.sh
 
 EXPOSE  19132/UDP \
