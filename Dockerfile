@@ -26,7 +26,7 @@ RUN cd $BASE && ls && sleep 15
 RUN rm /opt/BDSx-2/*.bat && \
     rm -rf /opt/BDSx-2/docker
 
-RUN chmod +X $BASE/bdsx.sh
+RUN chmod +X $BASE/bdsx.sh && echo "Done"
 
 EXPOSE  19132/UDP \
         19133/UDP
