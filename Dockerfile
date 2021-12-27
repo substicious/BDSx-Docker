@@ -4,7 +4,7 @@ ENV BASE='/opt/BDSx-2/' \
     BDS='/opt/BDSx-2/bedrock_server/' \
     BDSX='/opt/BDSx-2/bdsx/' \
     EXAMPLE='/opt/BDSx-2/example_and_test/' \
-    DATA='/opt/BDSx-2/' \
+    DATA='/data' \
     REPO='/opt/gitRepo/'
 
 RUN mkdir -p /opt/BDSx-2/ && \
@@ -21,7 +21,7 @@ RUN apk add freetype git mono nodejs npm wine wine-mono
 
 RUN git clone https://github.com/karikera/bdsx.git /opt/BDSx-2/
 
-RUN cd $BASE && ls && sleep 15
+RUN cd $BASE && ls && sleep 15 && cd example_and_test
 
 RUN rm /opt/BDSx-2/*.bat && \
     rm -rf /opt/BDSx-2/docker
