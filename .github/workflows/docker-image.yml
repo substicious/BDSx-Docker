@@ -22,7 +22,7 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
-          username: substicious@gmail.com
+          username: substicious
           password: f941be91-667d-44d3-abb2-7f95a2beea23
       
       - name: Extract metadata (tags, labels) for Docker
