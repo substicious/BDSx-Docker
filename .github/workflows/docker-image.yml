@@ -13,6 +13,9 @@ jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
+    secret:
+      DOCKER_USERNAME: substicious@gmail.com
+      DOCKER_PASSWORD: f941be91-667d-44d3-abb2-7f95a2beea23
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
