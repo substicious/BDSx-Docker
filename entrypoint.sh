@@ -3,10 +3,7 @@ cd /home/container/
 
 if [ ! -d ./bdsx ]
 then
-    git init
-    git config pull.ff only
-    git remote add upstream https://github.com/bdsx/bdsx.git
-    git pull upstream master
+    git clone https://github.com/bdsx/bdsx.git /home/container
 fi
 
 Xvfb :0 &
