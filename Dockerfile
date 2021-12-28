@@ -30,4 +30,4 @@ RUN cd bdsx && \
 
 VOLUME [ "/home/container" ]
 
-ENTRYPOINT ./entrypoint.sh
+CMD ./entrypoint.sh
