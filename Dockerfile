@@ -12,19 +12,22 @@ RUN apk add --update --no-cache curl ca-certificates nodejs npm openssl git tar 
 USER container
 ENV USER=container HOME=/home/container
 
-WORKDIR /home/container
+WORKDIR /home/container/
 
 COPY ./entrypoint.sh ./entrypoint.sh
 
 RUN mkdir bdsx
 
-RUN cd bdsx && \
-    git init && \
-    git config pull.ff only && \
-    git remote add upstream https://github.com/bdsx/bdsx.git && \
-    cd ../ && \
-    ls
+WORKDIR /home/container/bdsx
+
+RUN git init
+RUN git config pull.ff only
+RUN git remote add upstream https://github.com/bdsx/bdsx.git
+
+WORKDIR /home/container
 
 VOLUME [ "/home/container" ]
 
-CMD [ "/bin/ash" ]
+COPY ./entrypoint.sh /home/container/entrypoint.sh
+
+CMD [ "/bin/ash", "entrypoint.sh" ]
