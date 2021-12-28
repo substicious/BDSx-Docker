@@ -22,8 +22,6 @@ RUN mkdir bdsx && \
     ls && \
     sleep 5 && \
     cd /home/container
- 
-WORKDIR /home/container
 
 COPY ./entrypoint.sh /home/container/entrypoint.sh
 
@@ -31,4 +29,4 @@ RUN ls && sleep 5
 
 VOLUME /home/container
 
-CMD ["/bin/ash", "./entrypoint.sh"]
+CMD ["/bin/ash", "entrypoint.sh"]
