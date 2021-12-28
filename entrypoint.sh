@@ -1,5 +1,8 @@
 #!/bin/ash
 
+Xvfb :0 &
+export DISPLAY=:0
+
 apk update
 apk add --no-cache --update
 git npm
@@ -25,11 +28,11 @@ git pull --ff-only
 # Make sure we're in the correct dir
 cd /home/container/
 
-STARTUP=`BDSX_YES=true BDSX_PERMANENT=true ./bdsx/bdsx.sh`
+STARTUP=`bdsx/bdsx.sh`
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container/$ ${MODIFIED_STARTUP}"
 
 # Run the Server
-${MODIFIED_STARTUP}
+BDSX_YES=true BDSX_PERMANENT=true ${MODIFIED_STARTUP}
