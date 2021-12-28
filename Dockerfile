@@ -15,9 +15,10 @@ RUN apk add --update --no-cache curl ca-certificates nodejs npm openssl git tar 
 COPY ./entrypoint.sh /entrypoint.sh
 
 USER container
-ENV USER=container HOME=/home/container
 
 RUN git clone https://github.com/bdsx/bdsx.git /home/container/bdsx
+
+ENV USER=container HOME=/home/container
 
 VOLUME [ "/home/container" ]
 
