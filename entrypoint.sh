@@ -34,9 +34,11 @@ STARTUP=`bdsx/bdsx.sh`
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container/$ ${MODIFIED_STARTUP}"
 
-cd /home/container/
+cd /home/container/bdsx
 ls
 sleep 15
 
+cd /home/container/
+
 # Run the Server
-BDSX_YES=true BDSX_PERMANENT=true ${MODIFIED_STARTUP}
+${MODIFIED_STARTUP} BDSX_YES=true BDSX_PERMANENT=true 
