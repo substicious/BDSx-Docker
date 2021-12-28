@@ -30,4 +30,4 @@ WORKDIR /home/container
     
 VOLUME [ "/home/container" ]
 
-CMD ["/bin/ash", "/home/container/entrypoint.sh"]
+ENTRYPOINT [ "/home/container/entrypoint.sh" ]
