@@ -9,7 +9,7 @@ RUN apk add --update --no-cache curl ca-certificates nodejs npm openssl git tar 
     && adduser -D -h /home/container container \
     && ln -s /etc/localtime /etc/timezone \
     && mkdir /home/container/bdsx \
-    && chown -R 1000:1000 /home/container/
+    && chown -R container:container /home/container/
 
 COPY ./entrypoint.sh /entrypoint.sh
 
