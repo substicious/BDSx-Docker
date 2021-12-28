@@ -12,6 +12,14 @@ RUN apk add --update --no-cache curl ca-certificates nodejs npm openssl git tar 
 USER container
 ENV USER=container HOME=/home/container
 
+USER root
+
+COPY ./entrypoint.sh ./entrypoint.sh
+
+RUN chmod a+X ./entrypoint.sh && chown container:container ./entrypoint.sh && ls && sleep 5
+
+USER container
+
 WORKDIR /home/container
 
 RUN mkdir bdsx && \
@@ -22,11 +30,7 @@ RUN mkdir bdsx && \
     ls && \
     sleep 5 && \
     cd /home/container
-
-COPY ./entrypoint.sh ./entrypoint.sh
-
-RUN chmod a+X ./entrypoint.sh && ls && sleep 5
-
+    
 VOLUME /home/container
 
 CMD ["/bin/ash", "entrypoint.sh"]
