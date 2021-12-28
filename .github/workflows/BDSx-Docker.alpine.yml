@@ -11,6 +11,11 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      home:
+        description: 'location'
+        required: false
+        default: 'Github'
 
 jobs:
   push_to_registry:
