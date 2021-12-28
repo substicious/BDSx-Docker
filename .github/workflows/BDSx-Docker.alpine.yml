@@ -5,11 +5,12 @@
 
 name: Publish BDSx-Docker:alpine
 
-on:
+on:   
   push:
     branches: alpine
   release:
     types: [published]
+  workflow_dispatch:
 
 jobs:
   push_to_registry:
