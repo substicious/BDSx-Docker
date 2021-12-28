@@ -5,7 +5,7 @@ USER root
 RUN sed -i -e 's/v[[:digit:]]\..*\//edge\//g' /etc/apk/repositories \
     && apk upgrade --update-cache --available 
 
-RUN apk add --update --no-cache freetype git nodejs npm wine gnutls ncurses-libs xvfb tzdata wget \
+RUN apk add --update --no-cache freetype git nodejs npm wine gnutls ncurses-libs xvfb tzdata wget wine-mono \
     && ln -s /etc/localtime /etc/timezone \
     && addgroup -g 1000 container \
     && adduser -u 1000 -G container -D -h /home/container container
