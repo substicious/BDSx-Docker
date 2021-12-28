@@ -27,6 +27,8 @@ WORKDIR /home/container
 
 COPY ./entrypoint.sh /home/container/entrypoint.sh
 
+RUN ls && sleep 5
+
 VOLUME /home/container
 
 CMD ["/bin/ash", "./entrypoint.sh"]
