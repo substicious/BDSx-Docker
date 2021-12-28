@@ -27,4 +27,4 @@ COPY ./entrypoint.sh /home/container/entrypoint.sh
 
 VOLUME /home/container
 
-CMD ["/bin/ash", "/entrypoint.sh"]
+CMD ["/bin/ash", "/home/container/entrypoint.sh"]
