@@ -21,13 +21,13 @@ WORKDIR /home/container
 
 RUN mkdir bdsx
 
-WORKDIR /home/container/bdsx
-RUN git init && \
+RUN cd bdsx && \
+    git init && \
     git config pull.ff only && \
-    git remote add upstream https://github.com/bdsx/bdsx.git
-    
-WORKDIR /home/container
-    
+    git remote add upstream https://github.com/bdsx/bdsx.git && \
+    cd ../ && \
+    ls
+
 VOLUME [ "/home/container" ]
 
 ENTRYPOINT ./entrypoint.sh
