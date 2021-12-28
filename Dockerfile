@@ -14,7 +14,7 @@ ENV USER=container HOME=/home/container
 
 WORKDIR /home/container
 
-COPY ./entrypoint.sh /home/container/entrypoint.sh
+COPY ./entrypoint.sh ./entrypoint.sh
 
 RUN mkdir bdsx
 
@@ -27,4 +27,4 @@ RUN cd bdsx && \
 
 VOLUME [ "/home/container" ]
 
-CMD ./entrypoint.sh
+CMD [ "/bin/ash" ]
