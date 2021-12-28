@@ -14,9 +14,9 @@ ENV USER=container HOME=/home/container
 
 USER root
 
-COPY ./entrypoint.sh ./entrypoint.sh
+COPY ./entrypoint.sh /home/container/entrypoint.sh
 
-RUN chmod a+X ./entrypoint.sh && chown container:container ./entrypoint.sh && ls && sleep 5
+RUN chmod a+X /home/container/entrypoint.sh && chown container:container /home/container/entrypoint.sh && ls && sleep 5
 
 USER container
 
