@@ -19,11 +19,6 @@ RUN mkdir /home/container/bdsx && \
 
 USER container
 
-RUN cd /home/container/bdsx \
-    && git init \
-    && git config pull.ff only \
-    && git remote add upstream https://github.com/bdsx/bdsx.git
-
 VOLUME [ "/home/container" ]
 
 WORKDIR /home/container
