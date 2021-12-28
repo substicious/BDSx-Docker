@@ -19,6 +19,8 @@ RUN mkdir bdsx && \
     git init && \
     git config pull.ff only && \
     git remote add upstream https://github.com/bdsx/bdsx.git && \
+    ls && \
+    sleep 5 && \
     cd /home/container
  
 WORKDIR /home/container
@@ -27,4 +29,4 @@ COPY ./entrypoint.sh /home/container/entrypoint.sh
 
 VOLUME /home/container
 
-CMD ["/bin/ash", "/home/container/entrypoint.sh"]
+CMD ["/bin/ash", "./entrypoint.sh"]
