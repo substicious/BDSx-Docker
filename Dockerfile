@@ -14,6 +14,17 @@ ENV USER=container HOME=/home/container
 
 WORKDIR /home/container
 
-COPY ./entrypoint.sh /entrypoint.sh
+RUN mkdir bdsx && \
+    cd bdsx && \
+    git init && \
+    git config pull.ff only && \
+    git remote add upstream https://github.com/bdsx/bdsx.git && \
+    cd /home/container
+ 
+WORKDIR /home/container
+
+COPY ./entrypoint.sh /home/container/entrypoint.sh
+
+VOLUME /home/container
 
 CMD ["/bin/ash", "/entrypoint.sh"]
