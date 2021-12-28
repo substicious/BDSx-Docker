@@ -10,6 +10,19 @@ RUN apk add --update --no-cache curl ca-certificates nodejs npm openssl git tar 
     && addgroup -g 1000 container \
     && adduser -u 1000 -G container -D -h /home/container container
 
+RUN wget https://dl.winehq.org/wine/wine-mono/6.1.1/wine-mono-6.1.1-x86.msi && \
+    wget https://dl.winehq.org/wine/wine-gecko/2.47.2/wine-gecko-2.47.2-x86_64.msi
+
+RUN wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks \
+    -O /usr/bin/winetricks && \
+    chmod +rx /usr/bin/winetricks && \
+    winetricks win10
+
+RUN wine64 msiexec /i wine-mono-6.1.1-x86.msi && \
+    wine64 msiexec /i wine-gecko-2.47.2-x86_64.msi
+
+RUN rm *.msi
+
 COPY ./entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
