@@ -17,13 +17,10 @@ COPY ./entrypoint.sh /entrypoint.sh
 USER container
 ENV USER=container HOME=/home/container
 
-WORKDIR /home/container
-
-RUN cd /home/container/bdsx
-RUN git init
-RUN git config pull.ff only
-RUN git remote add upstream https://github.com/bdsx/bdsx.git
+RUN git clone https://github.com/bdsx/bdsx.git /home/container/bdsx
 
 VOLUME [ "/home/container" ]
+
+WORKDIR /home/container
 
 CMD [ "/bin/ash", "/entrypoint.sh" ]
