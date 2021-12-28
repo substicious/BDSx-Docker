@@ -20,4 +20,4 @@ Xvfb :0 &
 export DISPLAY=:0
 
 # Run the Server
-${MODIFIED_STARTUP} BDSX_YES=true BDSX_PERMANENT=true 
+${MODIFIED_STARTUP} -y
