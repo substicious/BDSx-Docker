@@ -1,5 +1,5 @@
 #Make sure we're in the correct dir
-cd /home/container/bdsx
+cd /home/container/
 
 if [ ! -d ./bdsx ]
 then
@@ -12,7 +12,5 @@ fi
 Xvfb :0 &
 export DISPLAY=:0
 
-chmod +x /home/container/bdsx/bdsx.sh
-
 npm i
-BDSX_YES=true BDSX_PERMANENT=true /home/container/bdsx/bdsx.sh
+BDSX_YES=true BDSX_PERMANENT=true /home/container/bdsx.sh
