@@ -1,29 +1,5 @@
 #!/bin/ash
 
-Xvfb :0 &
-export DISPLAY=:0
-
-apk update
-apk add --no-cache --update
-git npm
-
-# make sure we're in correct dir
-if [ ! -d /mnt/server ]; then
-    mkdir /mnt/server
-fi
-
-cd /mnt/server
-
-# install
-if [ ! -d bdsx ]; then
-    git clone https://github.com/bdsx/bdsx.git
-fi
-
-# update
-cd bdsx
-git pull --ff-only
-
-./update.sh
 
 # Make sure we're in the correct dir
 cd /home/container/
@@ -39,6 +15,9 @@ ls
 sleep 15
 
 cd /home/container/
+
+Xvfb :0 &
+export DISPLAY=:0
 
 # Run the Server
 ${MODIFIED_STARTUP} BDSX_YES=true BDSX_PERMANENT=true 
