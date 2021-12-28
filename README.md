@@ -4,6 +4,8 @@
 # BDSx For Linux Docker
 ### BDSx: Minecraft Bedrock Dedicated Server + node.js!
 
+[![Publish BDSx-Docker:alpine](https://github.com/substicious/BDSx-Docker/actions/workflows/BDSx-Docker.alpine.yml/badge.svg?branch=alpine&event=status)](https://github.com/substicious/BDSx-Docker/actions/workflows/BDSx-Docker.alpine.yml)
+
 #### *DISCLAIMER:*
 *I **DO NOT** take any credit for the great work behind Minecraft BDSx software. The credit goes to @karikera and you can view the github [repo](https://github.com/karikera/bdsx).*
 
