@@ -17,7 +17,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositori
 
 RUN apk update
 
-RUN apk add freetype git mono nodejs npm wine wine-mono
+RUN apk add freetype git mono nodejs npm wine wine-mono bash
 
 RUN git clone https://github.com/bdsx/bdsx.git /opt/BDSx-2/
 
