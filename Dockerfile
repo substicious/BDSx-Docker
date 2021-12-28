@@ -23,9 +23,9 @@ RUN mkdir bdsx && \
     sleep 5 && \
     cd /home/container
 
-COPY ./entrypoint.sh /home/container/entrypoint.sh
+COPY ./entrypoint.sh ./entrypoint.sh
 
-RUN ls && sleep 5
+RUN chmod a+X ./entrypoint.sh && ls && sleep 5
 
 VOLUME /home/container
 
