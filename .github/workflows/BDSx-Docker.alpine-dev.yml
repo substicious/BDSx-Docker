@@ -1,4 +1,4 @@
-name: Publish BDSx-Docker:alpine-Dev
+name: Alpine Dev
 
 on: workflow_dispatch
 
