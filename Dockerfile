@@ -15,7 +15,7 @@ RUN apk add --update --no-cache freetype git nodejs npm wine wine-mono gnutls nc
     && ln -s /etc/localtime /etc/timezone \
     && addgroup -g 1000 container \
     && adduser -u 1000 -G container -D -h /home/container container
-
+USER container
 RUN winetricks win10
 
 CMD ["/bin/ash"]
