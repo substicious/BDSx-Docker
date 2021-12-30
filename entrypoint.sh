@@ -1,4 +1,5 @@
 cd /home/container/BDSx
+
 if [ ! -d ./bdsx ]
 then
     git clone https://github.com/bdsx/bdsx.git /home/container/BDSx
