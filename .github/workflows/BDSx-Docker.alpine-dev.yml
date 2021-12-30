@@ -7,6 +7,8 @@ on:
         description: 'Log'
         required: True
         default: 'Dev Test'
+  push:
+    branches: alpine-Dev
         
 jobs:
   push_to_registry:
