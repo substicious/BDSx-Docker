@@ -21,9 +21,10 @@ COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 RUN mkdir /home/container/BDSx && \
-    chown -R 1000:1000 /home/container/
+    chown -R container:1000 /home/container/
 
 USER container
+ENV USER=container HOME=/home/container
 
 WORKDIR /home/container/BDSx
 
