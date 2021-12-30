@@ -19,7 +19,7 @@ COPY ./entrypoint.sh /entrypoint.sh
 
 RUN chmod a+X /entrypoint.sh \
     && chown -R container:container /home/container \
-    && chmod 775 -R /home/container \
+    && chmod 775 -R /home/container
 
 
 USER container
