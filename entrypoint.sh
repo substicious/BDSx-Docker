@@ -1,6 +1,8 @@
 cd /home/container/BDSx
 if [ ! -d ./bdsx ]
 then
+    chown -R container:container /home/container
+    chmod 775 -R /home/container
     git pull upstream master
 fi
 Xvfb :0 &

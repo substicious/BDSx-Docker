@@ -18,14 +18,16 @@ RUN apk add freetype git nodejs npm wine wine-mono gnutls ncurses-libs xvfb tzda
 
 COPY ./entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /entrypoint.sh
+RUN chmod a+X /entrypoint.sh
 
 USER container
 ENV USER=container HOME=/home/container
 
 RUN mkdir /home/container/BDSx \
     && chown -R container:container /home/container \
-    && chmod 775 -R /home/container
+    && chmod 775 -R /home/container \
+    && chown -R container:container /home/container/BDSx \
+    && chmod 775 -R /home/container/BDSx
 
 WORKDIR /home/container/BDSx
 
