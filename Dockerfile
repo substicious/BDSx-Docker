@@ -12,21 +12,21 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositori
 
 RUN apk add freetype git nodejs npm wine wine-mono gnutls ncurses-libs xvfb tzdata \
     && ln -s /etc/localtime /etc/timezone \
-    && adduser -D -h /home/container container
+    && addgroup -g 1000 container \
+    && adduser -u 1000 -G container -D -h /home/container container
 
-RUN chown -R container:container /home/container \
-    && chmod 775 -R /home/container
+RUN chown -R 1000:1000 /home/container 
 
 COPY ./entrypoint.sh /entrypoint.sh
 
 RUN chmod a+X /entrypoint.sh \
-    && chown container:container /entrypoint.sh
+    && chown 1000:1000 /entrypoint.sh
 
 USER container
 ENV USER=container HOME=/home/container
 
 RUN mkdir /home/container/BDSx \
-    && chown -R container:container /home/container \
+    && chown -R 1000:1000 /home/container \
     && chmod 775 -R /home/container 
 
 WORKDIR /home/container/BDSx
