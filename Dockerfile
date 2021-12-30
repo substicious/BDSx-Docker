@@ -31,9 +31,8 @@ RUN mkdir /home/container/BDSx \
 
 WORKDIR /home/container/BDSx
 
-RUN git init
-RUN git config pull.ff only
-RUN git remote add upstream https://github.com/bdsx/bdsx.git
+RUN git clone https://github.com/bdsx/bdsx.git /home/container/BDSx \
+    && chmod +x /home/container/BDSx/bdsx.sh
 
 VOLUME [ "/home/container/" ]
 
