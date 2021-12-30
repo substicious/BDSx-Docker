@@ -11,7 +11,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositori
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
     && apk upgrade --update-cache --available
 
-RUN apk add --update --no-cache freetype git nodejs npm wine wine-mono gnutls ncurses-libs xvfb tzdata mono winetricks \
+RUN apk add --update --no-cache freetype git nodejs npm wine wine-mono gnutls ncurses-libs xvfb tzdata mono winetricks taskset \
     && ln -s /etc/localtime /etc/timezone \
     && addgroup -g 1000 container \
     && adduser -u 1000 -G container -D -h /home/container container
