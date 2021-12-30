@@ -6,6 +6,12 @@
 name: Publish BDSx-Docker:master
 
 on:
+  workflow_dispatch:
+    inputs:
+      home:
+        description: 'Log'
+        required: True
+        default: 'Dev Test'
   push:
     branches: master
   release:
