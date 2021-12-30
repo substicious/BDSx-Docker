@@ -9,9 +9,9 @@ USER root
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-    && apk upgrade --update-cache --available
+    && apk upgrade 
 
-RUN apk add --update --no-cache freetype git nodejs npm wine wine-mono gnutls ncurses-libs xvfb tzdata mono \
+RUN apk add freetype git nodejs npm wine wine-mono gnutls ncurses-libs xvfb tzdata mono \
     && ln -s /etc/localtime /etc/timezone \
     && addgroup -g 1000 container \
     && adduser -u 1000 -G container -D -h /home/container container
@@ -19,9 +19,6 @@ RUN apk add --update --no-cache freetype git nodejs npm wine wine-mono gnutls nc
 COPY ./entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
-
-RUN mkdir /home/container/BDSx && \
-    chown -R container:container /home/container/
 
 USER container
 ENV USER=container HOME=/home/container
