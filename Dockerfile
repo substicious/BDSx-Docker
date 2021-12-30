@@ -23,7 +23,7 @@ RUN chmod +x /entrypoint.sh
 USER container
 ENV USER=container HOME=/home/container
 
-RUN mkdir -p BDSx \
+RUN mkdir /home/container/BDSx \
     && chown -R container:container /home/container \
     && chmod 775 -R /home/container
 
