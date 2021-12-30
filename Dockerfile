@@ -27,7 +27,7 @@ ENV USER=container HOME=/home/container
 
 RUN mkdir /home/container/BDSx \
     && chown -R container:container /home/container \
-    && chmod 775 -R /home/container \
+    && chmod 775 -R /home/container 
 
 WORKDIR /home/container/BDSx
 
