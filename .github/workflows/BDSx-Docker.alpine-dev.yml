@@ -1,6 +1,14 @@
-name: Alpine Dev
+name: Alpine Dev Docker
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      home:
+        description: 'Log'
+        required: True
+        default: 'Dev Test'
+  push:
+    branches: alpine-Dev
 
 jobs:
   push_to_registry:
